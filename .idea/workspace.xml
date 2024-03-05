@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca0fe6bc-6bab-4275-824e-8374b6aa9ca2" name="Changes" comment="new classes">
+    <list default="true" id="ca0fe6bc-6bab-4275-824e-8374b6aa9ca2" name="Changes" comment="added regex for polynomials">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Calculator/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculator/Operations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculator/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculator/Polynomial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +49,26 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Calculator.Main" />
+      <module name="PT2024_30227_Hirlav_Andrei_Assignment_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,7 +79,7 @@
       <updated>1709556705982</updated>
       <workItem from="1709556707370" duration="1364000" />
       <workItem from="1709558678094" duration="1247000" />
-      <workItem from="1709625203404" duration="2364000" />
+      <workItem from="1709625203404" duration="3951000" />
     </task>
     <task id="LOCAL-00001" summary="new Monoid class">
       <option name="closed" value="true" />
@@ -92,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709625259468</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added regex for polynomials">
+      <option name="closed" value="true" />
+      <created>1709627601928</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709627601928</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +141,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new Monoid class" />
     <MESSAGE value="new classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="new classes" />
+    <MESSAGE value="added regex for polynomials" />
+    <option name="LAST_COMMIT_MESSAGE" value="added regex for polynomials" />
   </component>
 </project>
