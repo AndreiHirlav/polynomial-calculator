@@ -1,10 +1,20 @@
 package Interface;
+import Calculator.Operations;
+import Calculator.Polynomial;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+
 public class Interfata extends JFrame{
+
+    private JTextArea input1 = new JTextArea(1, 10);
+    private JTextArea input2 = new JTextArea(1, 10);
+    private JTextArea resultsArea = new JTextArea(5, 20);
     public Interfata() {
         this.setSize(400, 500);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -16,7 +26,6 @@ public class Interfata extends JFrame{
         this.add(configureButtonPanel());
         this.add(configureResultPanel());
         this.setVisible(true);
-
     }
 
     public JPanel configureTitlePanel() {
@@ -30,8 +39,6 @@ public class Interfata extends JFrame{
     }
     public JPanel configureInputPanel() {
         JPanel inputPanel = new JPanel(new GridLayout(2, 2, 10, 10));
-        JTextArea input1 = new JTextArea(1, 10);
-        JTextArea input2 = new JTextArea(1, 10);
         inputPanel.add(new JLabel("Enter first polynomial:"));
         inputPanel.add(input1);
         inputPanel.add(new JLabel("Enter second polynomial:"));
@@ -45,28 +52,20 @@ public class Interfata extends JFrame{
     public JPanel configureButtonPanel() {
         //buttons Panel
         Font buttonFont = new Font("Arial", Font.BOLD, 16);
-        Border buttonBorder = BorderFactory.createEmptyBorder(10, 10, 10, 10);
-
         JPanel buttonPanel = new JPanel(new GridLayout(3, 2));
         JButton addBtn = new JButton("Add");
         addBtn.setFont(buttonFont);
-        addBtn.setBorder(buttonBorder);
         JButton subBtn = new JButton("Sub");
         subBtn.setFont(buttonFont);
-        subBtn.setBorder(buttonBorder);
+
         JButton mulBtn = new JButton("Multiply");
         mulBtn.setFont(buttonFont);
-        mulBtn.setBorder(buttonBorder);
         JButton divBtn = new JButton("Divide");
         divBtn.setFont(buttonFont);
-        divBtn.setBorder(buttonBorder);
         JButton derBtn = new JButton("Derive");
         derBtn.setFont(buttonFont);
-        derBtn.setBorder(buttonBorder);
         JButton intBtn = new JButton("Integrate");
         intBtn.setFont(buttonFont);
-        intBtn.setBorder(buttonBorder);
-
         buttonPanel.add(addBtn);
         buttonPanel.add(subBtn);
         buttonPanel.add(mulBtn);
@@ -75,21 +74,111 @@ public class Interfata extends JFrame{
         buttonPanel.add(intBtn);
         buttonPanel.setBackground(new Color(146, 190, 229));
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
+        addListeners(addBtn, subBtn, mulBtn, divBtn, derBtn, intBtn);
         return buttonPanel;
     }
 
     public JPanel configureResultPanel(){
         //results Panel
         JPanel resultsPanel = new JPanel(new BorderLayout());
-        JTextArea resultsArea = new JTextArea(5, 20);
         resultsArea.setEditable(false);
         resultsPanel.setBackground(new Color(176, 213, 239));
         resultsArea.setBackground(new Color(144, 187, 211));
         resultsPanel.add(new JLabel("Results:"), BorderLayout.NORTH);
         resultsPanel.add(resultsArea, BorderLayout.CENTER);
+
+        JPanel notePanel = new JPanel();
+        notePanel.setLayout(new BoxLayout(notePanel, BoxLayout.Y_AXIS));
+        notePanel.setBackground(new Color(176, 213, 239));
+        JLabel noteLabel1 = new JLabel("Note: For the derivative/integration operations,");
+        JLabel noteLabel2 = new JLabel("only the first polynomial will be used.");
+        notePanel.add(noteLabel1);
+        notePanel.add(noteLabel2);
+        resultsPanel.add(notePanel, BorderLayout.SOUTH);
         resultsPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         return resultsPanel;
+    }
+
+    public void addListeners(JButton add, JButton sub, JButton mul, JButton div, JButton der, JButton intgr) {
+        add.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                performOperation("add");
+            }
+        });
+
+        sub.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                performOperation("sub");
+            }
+        });
+
+        mul.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                performOperation("mul");
+            }
+        });
+        div.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                performOperation("div");
+            }
+        });
+
+        der.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                performOperation("der");
+            }
+        });
+
+        intgr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                performOperation("intgr");
+            }
+        });
+    }
+
+    public void performOperation(String operation) {
+        Polynomial poly1 = new Polynomial();
+        poly1.setMonomials(Polynomial.parsePolynomial(input1.getText()));
+        Polynomial poly2 = new Polynomial();
+        poly2.setMonomials(Polynomial.parsePolynomial(input2.getText()));
+        HashMap<Integer, Double> result = null;
+
+        switch (operation) {
+            case "add" :
+                result = Operations.addition(poly1, poly2);
+                resultsArea.setText(new String(Polynomial.hashToString(result)));
+                break;
+            case "sub" :
+                result = Operations.subtraction(poly1, poly2);
+                resultsArea.setText(new String(Polynomial.hashToString(result)));
+                break;
+            case "mul" :
+                result = Operations.multiplication(poly1, poly2);
+                resultsArea.setText(new String(Polynomial.hashToString(result)));
+                break;
+            case "div" :
+                try {
+                    result = Operations.divide(poly1, poly2);
+                    resultsArea.setText(new String(Polynomial.hashToString(result)));
+                }catch(ArithmeticException e) {
+                    resultsArea.setText("Cannot divide by 0!");
+                }
+                break;
+            case "der" :
+                result = Operations.derivation(poly1);
+                resultsArea.setText(new String(Polynomial.hashToString(result)));
+                break;
+            case "intgr" :
+                result = Operations.integration(poly1);
+                resultsArea.setText(new String(Polynomial.hashToString(result) + " + C"));
+                break;
+        }
     }
 }

@@ -45,4 +45,57 @@ public class Operations {
         return rezultat;
     }
 
+    public static HashMap<Integer, Double> multiplication(Polynomial poly1, Polynomial poly2) {
+        HashMap<Integer, Double> rezultat = new HashMap<>();
+
+        for(Map.Entry<Integer, Double> polyn1: poly1.getMonomials().entrySet())
+            for(Map.Entry<Integer, Double> polyn2 : poly2.getMonomials().entrySet()) {
+                int power = polyn1.getKey() +polyn2.getKey();
+                double coeficient = polyn1.getValue() * polyn2.getValue();
+
+                if(!rezultat.containsKey(power)) { //daca nu contine cheia=puterea noua
+                    rezultat.put(power, coeficient);
+                } else {
+                    rezultat.put(power, coeficient + rezultat.get(power));   //adaug coeficientul nou obtinut altfel
+                }
+            }
+
+
+        return rezultat;
+    }
+
+    public static HashMap<Integer, Double>divide(Polynomial poly1, Polynomial poly2) {
+        HashMap<Integer, Double> rezultat = new HashMap<>();
+
+       int x = 5/0;
+
+        return rezultat;
+    }
+
+    public static HashMap<Integer, Double>derivation(Polynomial poly1) {
+        HashMap<Integer, Double> rezultat = new HashMap<>();
+
+        for(Map.Entry<Integer, Double> entry : poly1.getMonomials().entrySet()) {
+            if(entry.getKey() == 1) {   //adica am de forma b*X
+                rezultat.put(0, entry.getValue());
+            } else if(entry.getKey() > 1) {   //asta e cazul general
+                rezultat.put(entry.getKey() - 1, entry.getValue() * entry.getKey());   //inmultesc puterea cu coeficientul, dupa scad puterea
+            }
+        }
+
+        return rezultat;
+    }
+
+    public static HashMap<Integer, Double>integration(Polynomial poly1) {
+        HashMap<Integer, Double> rezultat = new HashMap<>();
+
+        for(Map.Entry<Integer, Double> entry : poly1.getMonomials().entrySet()) {
+            rezultat.put(entry.getKey() + 1, entry.getValue()/ (entry.getKey() + 1));
+        }
+
+        return rezultat;
+    }
+
+
+
 }
