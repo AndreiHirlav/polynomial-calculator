@@ -1,4 +1,4 @@
-package Calculator;
+package Model;
 import java.util.*;
 
 public class Operations {
