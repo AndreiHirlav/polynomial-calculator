@@ -9,6 +9,10 @@ public class Polynomial {
     public Polynomial() {
         this.monomials = new HashMap<>();
     }
+    public Polynomial(String poly) {
+        this.monomials = new HashMap<>();
+        this.setMonomials(parsePolynomial(poly));
+    }
 
     public static HashMap<Integer, Double> parsePolynomial(String polynomial) {
         String normalizedPoly = polynomial.replaceAll("\\s", "").replaceAll("\\-", "+-");

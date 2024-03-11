@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca0fe6bc-6bab-4275-824e-8374b6aa9ca2" name="Changes" comment="added multiplicatio,  integration, derivation">
+    <list default="true" id="ca0fe6bc-6bab-4275-824e-8374b6aa9ca2" name="Changes" comment="added multiplication,  integration, derivation">
+      <change afterPath="$PROJECT_DIR$/src/test/java/OperationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Calculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Calculator/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Operations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Calculator/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Polynomial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/Interfata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Interfata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Polynomial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +46,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Facultate/AN 2/TP/PT2024_30227_Hirlav_Andrei/PT2024_30227_Hirlav_Andrei_Assignment_1/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -54,9 +55,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Facultate\AN 2\TP\PT2024_30227_Hirlav_Andrei\PT2024_30227_Hirlav_Andrei_Assignment_1\src" />
+      <recent name="D:\Facultate\AN 2\TP\PT2024_30227_Hirlav_Andrei\PT2024_30227_Hirlav_Andrei_Assignment_1\src\main\java\test" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
       <module name="PT2024_30227_Hirlav_Andrei_Assignment_1" />
       <extension name="coverage">
         <pattern>
@@ -68,11 +75,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -93,7 +95,7 @@
       <workItem from="1709801770592" duration="2400000" />
       <workItem from="1709807625934" duration="1385000" />
       <workItem from="1709816805657" duration="2895000" />
-      <workItem from="1710151151358" duration="817000" />
+      <workItem from="1710151151358" duration="6124000" />
     </task>
     <task id="LOCAL-00001" summary="new Monoid class">
       <option name="closed" value="true" />
@@ -167,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710151259060</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added multiplication,  integration, derivation">
+      <option name="closed" value="true" />
+      <created>1710152036411</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710152036411</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +202,7 @@
     <MESSAGE value="interface begginings" />
     <MESSAGE value="interface added" />
     <MESSAGE value="added multiplicatio,  integration, derivation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added multiplicatio,  integration, derivation" />
+    <MESSAGE value="added multiplication,  integration, derivation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added multiplication,  integration, derivation" />
   </component>
 </project>
