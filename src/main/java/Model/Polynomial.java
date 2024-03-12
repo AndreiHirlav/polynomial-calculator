@@ -84,6 +84,12 @@ public class Polynomial {
 
         return result;
     }
+    public static boolean isZeroPolynomial(HashMap<Integer, Double> poly) {
+        for(Double coeff : poly.values())
+            if(coeff != 0)
+                return false;
+        return true;
+    }
 
     public void setMonomials(HashMap<Integer, Double> monomials) {
         this.monomials = monomials;

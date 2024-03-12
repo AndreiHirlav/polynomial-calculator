@@ -35,6 +35,15 @@ public class OperationTest {
     }
 
     @Test
+    public void divisionTest() {
+        HashMap<Integer, Double> result = Operations.divide(poly1, poly2);
+        assertEquals(3, result.get(1));
+        assertEquals(5, result.get(0));
+
+        assertEquals(11, poly1.getMonomials().get(0));
+    }
+
+    @Test
     public void derivationTest() {
         HashMap<Integer, Double> result = Operations.derivation(poly1);
         assertEquals(6, result.get(1));

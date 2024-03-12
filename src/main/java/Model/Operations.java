@@ -65,11 +65,44 @@ public class Operations {
     }
 
     public static HashMap<Integer, Double>divide(Polynomial poly1, Polynomial poly2) {
-        HashMap<Integer, Double> rezultat = new HashMap<>();
+        //iau polinoamele si le sortez
+        TreeMap<Integer, Double> poly1Tree = new TreeMap<>(poly1.getMonomials());
+        TreeMap<Integer, Double> poly1Ordered = new TreeMap<>(poly1Tree.descendingMap());
 
-       int x = 5/0;
+        TreeMap<Integer, Double> poly2Tree = new TreeMap<>(poly2.getMonomials());
+        TreeMap<Integer, Double> poly2Ordered = new TreeMap<>(poly2Tree.descendingMap());
 
-        return rezultat;
+        HashMap<Integer, Double> quotient = new HashMap<>();
+
+       //cat timp mai am termeni in primul polinom si gradul sau e mai mare decat gradul la al doilea
+        while(!poly1Ordered.isEmpty() && poly1Ordered.firstKey() >= poly2Ordered.firstKey()) {
+            //impart primul monom
+            int degree = poly1Ordered.firstKey() - poly2Ordered.firstKey();
+            double coefficient = poly1Ordered.firstEntry().getValue() / poly2Ordered.firstEntry().getValue();
+
+            quotient.put(degree, coefficient);
+
+            //inmultesc polinomul 2 cu rezultatul impartirii
+            for(Map.Entry<Integer, Double> entry : poly2Ordered.entrySet()) {
+                int newDegree = entry.getKey() + degree;
+                double newCoeff = entry.getValue() * coefficient;
+
+                if(poly1Ordered.containsKey(newDegree)) {
+                    //daca am puterea deja adaugata fac scaderea
+                    double updatedCoeff = poly1Ordered.get(newDegree) - newCoeff;
+                    if(updatedCoeff == 0) {
+                        poly1Ordered.remove(newDegree);
+                    } else {
+                        poly1Ordered.put(newDegree, updatedCoeff);
+                    }
+                } else {
+                    //altfel o adaug cu -
+                    poly1Ordered.put(newDegree, -newCoeff);
+                }
+            }
+        }
+        poly1.setMonomials(new HashMap<Integer, Double>(poly1Ordered));  //si pun restul in poly1
+        return quotient;
     }
 
     public static HashMap<Integer, Double>derivation(Polynomial poly1) {

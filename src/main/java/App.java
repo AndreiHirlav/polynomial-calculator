@@ -1,3 +1,5 @@
+import Model.Operations;
+import Model.Polynomial;
 import View.Interfata;
 
 public class App {

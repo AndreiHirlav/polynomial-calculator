@@ -163,12 +163,12 @@ public class Interfata extends JFrame{
                 resultsArea.setText(new String(Polynomial.hashToString(result)));
                 break;
             case "div" :
-                try {
-                    result = Operations.divide(poly1, poly2);
-                    resultsArea.setText(new String(Polynomial.hashToString(result)));
-                }catch(ArithmeticException e) {
+                if(Polynomial.isZeroPolynomial(poly2.getMonomials())) {
                     resultsArea.setText("Cannot divide by 0!");
+                    break;
                 }
+                result = Operations.divide(poly1, poly2);
+                resultsArea.setText(new String("Quotient: " + Polynomial.hashToString(result)) + "\nRemainder: " + Polynomial.hashToString(poly1.getMonomials()));
                 break;
             case "der" :
                 result = Operations.derivation(poly1);
