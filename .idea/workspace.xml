@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca0fe6bc-6bab-4275-824e-8374b6aa9ca2" name="Changes" comment="final" />
+    <list default="true" id="ca0fe6bc-6bab-4275-824e-8374b6aa9ca2" name="Changes" comment="final">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,6 +101,8 @@
       <workItem from="1710169482517" duration="3928000" />
       <workItem from="1710244987919" duration="5116000" />
       <workItem from="1710250133988" duration="25000" />
+      <workItem from="1710250348782" duration="66000" />
+      <workItem from="1710699774531" duration="726000" />
     </task>
     <task id="LOCAL-00001" summary="new Monoid class">
       <option name="closed" value="true" />
@@ -203,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710250152272</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="final">
+      <option name="closed" value="true" />
+      <created>1710250363955</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710250363955</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
